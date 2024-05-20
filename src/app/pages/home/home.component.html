@@ -1,2 +1,90 @@
-<p>home works!</p>
-<h1>esta es una pagina de inicio... :3</h1>
+<!-- home.component.html -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+  
+  <div class="hero">
+    <h1>Bienvenido a Cuidado de Perros</h1>
+    <p>La mejor atención para tu mejor amigo</p>
+  </div>
+  
+  <div class="container mt-5">
+    <div class="row text-center">
+      <div class="col-md-4">
+        <img src="https://via.placeholder.com/100" class="rounded-circle mb-3" alt="Servicio 1">
+        <h3>Paseo de Perros</h3>
+        <p>Proporcionamos paseos diarios para mantener a tu perro feliz y saludable.</p>
+      </div>
+      <div class="col-md-4">
+        <img src="https://via.placeholder.com/100" class="rounded-circle mb-3" alt="Servicio 2">
+        <h3>Guardería</h3>
+        <p>Ofrecemos un ambiente seguro y divertido para que tu perro socialice y juegue.</p>
+      </div>
+      <div class="col-md-4">
+        <img src="https://via.placeholder.com/100" class="rounded-circle mb-3" alt="Servicio 3">
+        <h3>Entrenamiento</h3>
+        <p>Entrenamiento profesional para enseñar buenos modales y obediencia.</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Carrusel de fotos -->
+  <div id="photoCarousel" class="carousel slide mt-5" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://via.placeholder.com/1200x400" class="d-block w-100" alt="Foto 1">
+      </div>
+      <div class="carousel-item">
+        <img src="https://via.placeholder.com/1200x400" class="d-block w-100" alt="Foto 2">
+      </div>
+      <div class="carousel-item">
+        <img src="https://via.placeholder.com/1200x400" class="d-block w-100" alt="Foto 3">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#photoCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#photoCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  
+  <footer class="bg-light text-center text-lg-start mt-5">
+    <div class="container p-4">
+      <div class="row">
+        <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Cuidado de Perros</h5>
+          <p>
+            Dedicados a brindar el mejor cuidado y entrenamiento para tu perro. ¡Contáctanos hoy para más información!
+          </p>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Enlaces</h5>
+          <ul class="list-unstyled mb-0">
+            <li><a href="#" class="text-dark">Inicio</a></li>
+            <li><a href="#" class="text-dark">Servicios</a></li>
+            <li><a href="#" class="text-dark">Sobre Nosotros</a></li>
+            <li><a href="#" class="text-dark">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Contacto</h5>
+          <ul class="list-unstyled mb-0">
+            <li><a href="mailto:info@cuidadodeperros.com" class="text-dark">@cuidadodeperros.com</a></li>
+            <li><a href="tel:+1234567890" class="text-dark">99999999</a></li>
+            <li><a href="#" class="text-dark">asdasd</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="text-center p-3 bg-dark text-white">
+      Tus mejores amigos en las mejores manos.
+    </div>
+  </footer>
+  
