@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { RouterModule, Routes } from '@angular/router';
 import { RegisterOwnerComponent } from './register-owner/register-owner.component';
-import { DashboardComponent } from '../pages/dashboard/dashboard.component';
+import { RegisterCarerComponent } from './register-carer/register-carer.component';
 
 const routes: Routes = [
   {
@@ -18,8 +18,8 @@ const routes: Routes = [
         component: RegisterOwnerComponent,
       },
       {
-        path: 'adminReservation',
-        component: DashboardComponent,
+        path: 'registerCarer',
+        component: RegisterCarerComponent,
       },
     ],
   },
