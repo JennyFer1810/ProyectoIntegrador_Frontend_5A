@@ -7,13 +7,25 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { SharedModule } from '../shared/shared.module';
 import { PagesRoutingModule } from './pages-routing.module';
+import { RegisterPetsComponent } from './register-pets/register-pets.component';
+import { RegisterAddressComponent } from './register-address/register-address.component';
+import { ProfileComponent } from './profile/profile.component';
+import { RegisterCareRequestComponent } from './register-care-request/register-care-request.component';
+import { CareRequestListComponent } from './care-request-list/care-request-list.component';
+import { UserAdministratorComponent } from './user-administrator/user-administrator.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
     AboutUsContactsComponent,
     ServicesComponent,
-    DashboardComponent
+    DashboardComponent,
+    RegisterPetsComponent,
+    RegisterAddressComponent,
+    ProfileComponent,
+    RegisterCareRequestComponent,
+    CareRequestListComponent,
+    UserAdministratorComponent
   ],
   imports: [
     CommonModule,

@@ -7,6 +7,11 @@ import { ServicesComponent } from './services/services.component';
 import { AboutUsContactsComponent } from './about-us-contacts/about-us-contacts.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from '../auth/login/login.component';
+import { RegisterAddressComponent } from './register-address/register-address.component';
+import { UserAdministratorComponent } from './user-administrator/user-administrator.component';
+import { ProfileComponent } from './profile/profile.component';
+import { CareRequestListComponent } from './care-request-list/care-request-list.component';
+import { RegisterPetsComponent } from './register-pets/register-pets.component';
 
 const routes: Routes = [
   {
@@ -36,6 +41,28 @@ const routes: Routes = [
       {
         path: 'login',
         component: LoginComponent,
+      },
+
+      ////////////////////////////////////////////
+      {
+        path: 'registerAddress',
+        component: RegisterAddressComponent,
+      },
+      {
+        path: 'userAdministrator',
+        component: UserAdministratorComponent,
+      },
+      {
+        path: 'profile',
+        component: ProfileComponent,
+      },
+      {
+        path: 'careList',
+        component: CareRequestListComponent,
+      },
+      {
+        path: 'registerRequest',
+        component: RegisterPetsComponent
       },
     ],
   },
