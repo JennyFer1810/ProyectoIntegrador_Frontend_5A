@@ -1,0 +1,155 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F19A56;
+
+}
+.logo {
+    display: flex;
+    align-items: center;
+}
+.logo img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #F19A56;
+    margin-bottom: 20px;
+}
+.hero {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    height: 400px; 
+    overflow: hidden;
+}
+.hero img {
+    max-width: 100%;
+    max-height: 100%; 
+    width: auto; 
+    height: auto;
+    border-radius: 10px; 
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+.carrusel {
+    display: flex;
+    width: 100%; 
+    height: 430px;
+    padding: 45px;
+    position: relative;
+    overflow-x: auto;
+}
+.carrusel img {
+    width: 300px; 
+    object-fit: cover;
+    transition: width 0.5s ease; 
+    padding: 6px;
+    border-radius: 20px;
+    border: 1px solid white; 
+}
+.carrusel img:hover {
+    cursor: crosshair;
+    width: 350px; 
+    filter: grayscale(100%); 
+    opacity: 0.8; 
+}
+.carrusel-item {
+    position: relative; 
+    margin-right: 10px;
+}
+.image-text {
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    background-color: rgba(0, 255, 102, 0.8); 
+    font-size: 20px;
+    border-radius: 5px;
+    display: none; 
+}
+.carrusel-item:hover .image-text {
+    display: block; 
+}
+  .title{
+    text-align: center;
+    font-size: 30px;
+  }
+.offers {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color:#F19A56;
+}
+.offer-text {
+    max-width: 50%;
+    background-color:#622a05;
+    color: white;
+    border-radius: 20px;
+    font-size: 25px;
+    padding: 30px;
+    height: 345px;
+    width: 350px;
+    margin-left: 400px;
+    margin-bottom: 70px;
+}
+.offer-text button{
+    background-color: white;
+    color: black;
+    border-radius: 20px;
+    font-weight: bold;
+}
+.offer-text button:hover{
+    color: rgb(255, 255, 255);
+    background-color: rgb(4, 112, 122);
+}
+.offer-image img {
+    max-width: 100em; 
+    max-height: 30em; 
+    width: auto; 
+    height: auto; 
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); 
+    margin-right: 400px;
+    margin-bottom: 70px;
+}
+.services {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+    background-color: #F19A56;
+}
+.container{
+    display: flex;
+}
+.card {
+    border-radius: 20px;
+    margin-left: 10px;
+    height: 200px;
+    background-color: #fff;
+    flex: 1;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+}
+.card:hover{
+    flex: 2;
+    background-color: rgb(207, 207, 207);
+}
+.card img {
+    width: 80px; 
+    height: auto;
+    border-radius: 20px 20px 0 0;
+    object-fit: cover; 
+}
+.card-text {
+    text-align: center; 
+    font-size: 16px;
+    margin-top: 10px; 
+}
+
+
