@@ -1,6 +1,7 @@
 .nosotros img {
     transition: transform 0.3s, box-shadow 0.3s;
     background-color: #F19A56; 
+    border-radius: 20px;
 }
 
 .nosotros img:hover {
@@ -40,4 +41,8 @@
 .circle {
     border-radius: 50%;
     object-fit: cover;
+}
+
+.card{
+    background-color: #FCA04B4D;
 }

@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff; 
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #F19A56;
+    margin-bottom: 20px;
+}
+
+.title {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.services {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #F19A56;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    border-radius: 20px;
+    background-color: #fff;
+    width: 200px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.details-btn {
+    margin-top: 10px;
+    background-color: #F19A56;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.details-btn:hover {
+    background-color: #E08948;
+}
+
+.save-profile-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px; 
+    background-color: #F19A56;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 999;
+}
+
+.save-profile-btn:hover {
+    background-color: #E08948;
+}
+
+.cats {
+    margin-top: 20px; 
+}

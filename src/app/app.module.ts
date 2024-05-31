@@ -9,6 +9,7 @@ import { SharedModule } from './shared/shared.module';
 import { AuthRoutingModule } from './auth/auth-routing.module';
 import { AuthModule } from './auth/auth.module';
 import { PagesModule } from './pages/pages.module';
+import { ConfigModule } from './config/config.module';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { PagesModule } from './pages/pages.module';
     AuthRoutingModule,
     PagesModule,
     AuthModule,
+    ConfigModule
   ],
   providers: [],
   bootstrap: [AppComponent]
