@@ -1,0 +1,74 @@
+.form-section {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-section label {
+    display: block;
+}
+
+.form-section select,
+.form-section input[type="text"] {
+    width: calc(50% - 10px);
+    margin-right: 10px;
+}
+
+.date-form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.date-form label {
+    display: inline-block;
+    text-align: center;
+    width: 30%;
+    margin-right: 10px;
+}
+
+.date-form input[type="date"] {
+    width: calc(30% - 10px);
+    margin-right: 10px;
+}
+
+.card {
+    border-radius: 20px;
+    background-color: #fff;
+    width: 200px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.btn{
+    background-color: #F19A56;
+    border-radius: 30px;
+    color: #FFFFFF;
+}
+
+.next-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #F19A56;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 999;
+}
+
+.next-btn:hover {
+    background-color: #E08948;
+}

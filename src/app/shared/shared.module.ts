@@ -7,13 +7,16 @@ import { RouterModule } from '@angular/router';
 import { SharedRoutingModule } from './shared-routing.module';
 import { AuthRoutingModule } from '../auth/auth-routing.module';
 import { CarruselComponent } from './carrusel/carrusel.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { AppComponent } from '../app.component';
 
 @NgModule({
   declarations: [
     SharedComponent,
     FooterComponent,
     NavbarComponent,
-    CarruselComponent
+    CarruselComponent,
+    SidebarComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +27,10 @@ import { CarruselComponent } from './carrusel/carrusel.component';
   exports: [
     NavbarComponent,
     FooterComponent,
-    CarruselComponent
-  ]
+    CarruselComponent,
+    SidebarComponent
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
 })
 export class SharedModule { }

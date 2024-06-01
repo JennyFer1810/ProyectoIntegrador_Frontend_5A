@@ -1,40 +1,20 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+.container-fluid {
     background-color: #F19A56;
+}
 
-}
-.logo {
-    display: flex;
-    align-items: center;
-}
-.logo img {
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
-}
-header {
-    text-align: center;
-    padding: 20px;
+.dog img{
     background-color: #F19A56;
-    margin-bottom: 20px;
-}
-.hero {
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    height: 400px; 
-    overflow: hidden;
-}
-.hero img {
-    max-width: 100%;
-    max-height: 100%; 
-    width: auto; 
-    height: auto;
     border-radius: 10px; 
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
+
+
+
+
+
+
+
+
 .carrusel {
     display: flex;
     width: 100%; 
@@ -42,14 +22,17 @@ header {
     padding: 45px;
     position: relative;
     overflow-x: auto;
+    background-color: #F19A56;
 }
+
 .carrusel img {
     width: 300px; 
     object-fit: cover;
     transition: width 0.5s ease; 
     padding: 6px;
     border-radius: 20px;
-    border: 1px solid white; 
+    border: 1px solid white;
+     
 }
 .carrusel img:hover {
     cursor: crosshair;
@@ -60,7 +43,9 @@ header {
 .carrusel-item {
     position: relative; 
     margin-right: 10px;
+    
 }
+
 .image-text {
     position: absolute;
     top: 50%; 
@@ -74,27 +59,12 @@ header {
 .carrusel-item:hover .image-text {
     display: block; 
 }
-  .title{
-    text-align: center;
-    font-size: 30px;
-  }
-.offers {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color:#F19A56;
-}
-.offer-text {
-    max-width: 50%;
+
+
+.offer {
     background-color:#622a05;
     color: white;
     border-radius: 20px;
-    font-size: 25px;
-    padding: 30px;
-    height: 345px;
-    width: 350px;
-    margin-left: 400px;
-    margin-bottom: 70px;
 }
 .offer-text button{
     background-color: white;
@@ -114,6 +84,72 @@ header {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); 
     margin-right: 400px;
     margin-bottom: 70px;
+}
+
+/* Media Queries para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .offer-text {
+        font-size: 10px; /* Reduce el tamaño de fuente */
+        padding: 10px; /* Reduce el padding */
+        margin: 15px; /* Ajusta el margen */
+
+    }
+
+  
+
+    .offer-image img {
+        max-height: 20em; /* Reduce la altura máxima de las imágenes */
+    }
+}
+
+@media (max-width: 480px) {
+    .offer-text {
+        font-size: 12px; /* Reduce aún más el tamaño de fuente */
+        padding: 10px; /* Reduce aún más el padding */
+        margin: 10px; /* Ajusta el margen */
+        width: 280px;
+    }
+    
+
+    .hero{
+        padding: 40px;
+        margin: -40PX;
+        background-color: #fff;
+    }
+
+    .carrusel {
+        display: flex;
+        flex-wrap: wrap; 
+        padding: 0px;
+        width: 351px;
+        height: auto;
+        background-color: #fff;
+    }
+    .services {
+        padding: 5px;
+    }
+    
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .card {
+        width: 90%; /* Ajusta el ancho de las tarjetas */
+        margin: 10px 0; /* Añade margen superior e inferior */
+    }
+
+    .card img {
+        width: 50px; /* Ajusta el tamaño de la imagen */
+    }
+
+    .card-text {
+        font-size: 12px; /* Ajusta el tamaño de la fuente del texto */
+    }
+  
+    .offer-image img {
+        max-height: 15em; /* Reduce aún más la altura máxima de las imágenes */
+    }
 }
 .services {
     display: flex;
@@ -140,16 +176,19 @@ header {
     flex: 2;
     background-color: rgb(207, 207, 207);
 }
+.title{
+    background-color: #F19A56;
+}
 .card img {
     width: 80px; 
     height: auto;
     border-radius: 20px 20px 0 0;
     object-fit: cover; 
+    
 }
 .card-text {
     text-align: center; 
     font-size: 16px;
     margin-top: 10px; 
+    background-color: #F19A56;
 }
-
-

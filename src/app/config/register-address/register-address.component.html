@@ -1,49 +1,56 @@
-<p>register-address works!</p>
 <div class="container-fluid my-5">
-    <div class="row justify-content-center">
-        <div class="col-12 col-md-8 col-lg-8">
-            <h1 class="text-start mb-4">Sus Direcciones</h1>
-            <form>
-                <div class="row mb-3">
-                    <div class="col-12 col-md-6 col-lg-6">
-                        <label for="callePrimaria" class="form-label">Calle Primaria</label>
-                        <input type="text" class="form-control" id="callePrimaria" required>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-6">
-                        <label for="calleSecundaria" class="form-label">Calle Secundaria</label>
-                        <input type="text" class="form-control" id="calleSecundaria" required>
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col-12 col-md-6 col-lg-6">
-                        <label for="numeroCasa" class="form-label">Número de Casa</label>
-                        <input type="text" class="form-control" id="numeroCasa" placeholder="Oe3-102" required>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-6">
-                        <label for="sector" class="form-label">Nombre del Sector</label>
-                        <input type="text" class="form-control" id="sector" required>
-                    </div>
-                </div>
-                <div class="text-end my-5">
-                    <button type="submit" class="btn px-5">Agregar Dirección</button>
-                </div>
+    <div class="row">
+        <!-- En esta columna se llama al sidebar que esta en shared -->
+        <div class="col-md-2">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="col-md-10 main-content">
+            <div class="row justify-content-center">
+                <div class="col-10 col-md-8 col-lg-8">
+                    <h2 class="text-center mb-4">Sus Direcciones</h2>
+                    <form>
+                        <div class="row mb-3">
+                            <div class="col-12 col-md-6 col-lg-6">
+                                <label for="callePrimaria" class="form-label">Calle Primaria</label>
+                                <input type="text" class="form-control" id="callePrimaria" required>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-6">
+                                <label for="calleSecundaria" class="form-label">Calle Secundaria</label>
+                                <input type="text" class="form-control" id="calleSecundaria" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-12 col-md-6 col-lg-6">
+                                <label for="numeroCasa" class="form-label">Número de Casa</label>
+                                <input type="text" class="form-control" id="numeroCasa" placeholder="Oe3-102" required>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-6">
+                                <label for="sector" class="form-label">Nombre del Sector</label>
+                                <input type="text" class="form-control" id="sector" required>
+                            </div>
+                        </div>
+                        <div class="text-end my-5">
+                            <button type="submit" class="btn px-5">Agregar Dirección</button>
+                        </div>
 
-                <div class="table-responsive">
-                    <table class="table">
-                        <thead>
-                            <h3 class="text-start p-2">Direcciones</h3>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Calle Primaria</td>
-                                <td>Calle Secundaria</td>
-                                <td>Número de Casa</td>
-                                <td>Nombre del Sector</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <h3 class="text-start p-2">Direcciones</h3>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Calle Primaria</td>
+                                        <td>Calle Secundaria</td>
+                                        <td>Número de Casa</td>
+                                        <td>Nombre del Sector</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </form>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
 </div>

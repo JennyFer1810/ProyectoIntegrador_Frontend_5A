@@ -8,6 +8,9 @@ import { RegisterAddressComponent } from './register-address/register-address.co
 import { RegisterPetsComponent } from './register-pets/register-pets.component';
 import { UserAdministratorComponent } from './user-administrator/user-administrator.component';
 import { PanelComponent } from './panel/panel.component';
+import { RegisterCareRequestComponent } from './register-care-request/register-care-request.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { ListPetsComponent } from './list-pets/list-pets.component';
 
 const routes: Routes = [
   {
@@ -35,7 +38,19 @@ const routes: Routes = [
       },
       {
         path: 'registerRequest',
+        component: RegisterCareRequestComponent
+      },
+      {
+        path: 'registerPets',
         component: RegisterPetsComponent
+      },
+      {
+        path: 'editProfile',
+        component: EditProfileComponent
+      },
+      {
+        path: 'listPets',
+        component: ListPetsComponent
       },
     ],
   },

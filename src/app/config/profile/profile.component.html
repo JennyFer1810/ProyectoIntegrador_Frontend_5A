@@ -1,1 +1,23 @@
-<p>profile works!</p>
+<div class="container-fluid mt-5">
+    <div class="row">
+        <!-- En esta columna se llama al sidebar que esta en shared -->
+        <div class="col-md-2">
+            <app-sidebar></app-sidebar>
+        </div>
+
+        <div class="col-md-10 text-center">
+            <h1>Perfil</h1>
+            <div class="profile-section text-center">
+                <img src="../../../assets/icons/profile-config.svg" alt="Foto de Perfil"
+                    class="profile-img mx-auto d-block" width="30%">
+                <div class="user-info mt-3">
+                    <h2>Nombre de usuario</h2>
+                    <p><strong>Correo</strong></p>
+                    <p><strong>Identificación</strong></p>
+                    <p><strong>Fecha registro</strong></p>
+                    <button class="btn btn-primary" [routerLink]="['/config', 'editProfile']">Editar perfil</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

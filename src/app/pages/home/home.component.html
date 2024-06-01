@@ -1,69 +1,93 @@
-<!-- home.component.html -->
-<body>
-  <header>
-    <h1>DogoFresh</h1>
-</header>
+<div class="container-fluid mt-2 mb-5">
+  <div class="row justify-content-center">
+    <h1 class="text-center">DogoFresh</h1>
+  </div>
 
-<section class="hero">
-    <img src="../../../assets/images/home/home1.jpg" alt="Dog with a leash">
-</section>
+  <div class="row justify-content-center mt-2">
+    <div class="dog text-center py-4">
+      <img src="../../../assets/images/home/home1.jpg" alt="Dog with a leash" width="80%">
+    </div>
+  </div>
 
-<section class="carrusel">
-  <div class="carrusel-item">
+  <section class="carrusel">
+    <div class="carrusel-item">
       <img src="../../../assets/images/home/carrusel1.avif" class="d-block w-100" alt="Image 1">
       <div class="image-text"><strong>Alojamiento de perros</strong> <br>Hogar lejos de casa para tu amigo.</div>
-  </div>
-  <div class="carrusel-item">
+    </div>
+    <div class="carrusel-item">
       <img src="../../../assets/images/home/carrusel2.avif" class="d-block w-100" alt="Image 2">
       <div class="image-text"><strong>Paseo de perros</strong><br> Ejercicio y diversión garantizados.</div>
-  </div>
-  <div class="carrusel-item">
+    </div>
+    <div class="carrusel-item">
       <img src="../../../assets/images/home/carrusel3.jpg" class="d-block w-100" alt="Image 3">
       <div class="image-text"><strong>Cuidado de perros</strong><br>Bienestar y atención integral.</div>
-  </div>
-  <div class="carrusel-item">
+    </div>
+    <div class="carrusel-item">
       <img src="../../../assets/images/home/carrusel4.jpg" class="d-block w-100" alt="Image 4">
       <div class="image-text"><strong>Paseadores expertos </strong> <br>Guía segura y amorosa para tu perro.</div>
-  </div>
-</section>
+    </div>
+  </section>
 
-<p class="title">Conoce Nuestras Ofertas</p>
-<section class="offers">
+
+  <!-- <section class="offers">
     <div class="offer-text">
-        <p>¡Oferta especial! ¿Necesitas un descanso? Aprovecha nuestra oferta y deja que nuestros expertos paseadores den a tu perro la atención y el ejercicio que necesita:</p>
-        <button>!Descubre las ofertas!</button>
+      <p>¡Oferta especial! ¿Necesitas un descanso? Aprovecha nuestra oferta y deja que nuestros expertos paseadores den
+        a tu perro la atención y el ejercicio que necesita:</p>
+      <button>¡Descubre las ofertas!</button>
     </div>
     <div class="offer-image">
-        <img src="../../../assets/images/home/ofertas.jpg" alt="Dog walkers">
+      <img src="../../../assets/images/home/ofertas.jpg" alt="Dog walkers">
     </div>
-</section>
-<p class="title">Nuestros Servicios</p>
-<section class="services">
-  <div class="container">
-    <div class="card">
-      <img src="../../../assets/images/home/alojamiento-de-mascotas.png" alt="Alojamiento de mascotas">
-      Alojamiento de mascotas
+  </section> -->
+
+  <div class="row justify-content-center">
+    <h2 class="text-center mb-4">Conoce Nuestras Ofertas</h2>
+    <div class="col-10 col-md-4 col-lg-4 text-end mt-5">
+      <div class="offer p-4">
+        <p class="text-center">¡Oferta especial! ¿Necesitas un descanso? Aprovecha nuestra oferta y deja que nuestros
+          expertos paseadores den
+          a tu perro la atención y el ejercicio que necesita:</p>
+        <div class="text-center">
+          <button type="submit" class="btn ">¡Descubre las ofertas!</button>
+        </div>
+      </div>
     </div>
-    <div class="card">
-      <img src="../../../assets/images/home/entrega-a-domicilio.png" alt="Cuidado a domicilio">
-      Cuidado a domicilio
-    </div>
-    <div class="card">
-      <img src="../../../assets/images/home/juguete-para-mascotas.png" alt="Visitas a domicilio">
-      Visitas a domicilio
-    </div>
-    <div class="card">
-      <img src="../../../assets/images/home/hogar.png" alt="Guarderia de día">
-      Guardería de día
-    </div>
-    <div class="card">
-      <img src="../../../assets/images/home/pasea-a-la-mascota.png" alt="Paseo de perros">
-      Paseo de perros
+    <hr class="my-3 d-md-none" />
+
+    <div class="col-10 col-md-6 col-lg-4 text-center">
+      <img src="../../../assets/images/home/ofertas.jpg" alt="Dog walkers" width="90%">
     </div>
   </div>
-</section>
 
-</body>
+  <div class="row justify-content-center mt-5">
+    <h2 class="text-center">Nuestros Servicios</h2>
+    <section class="services">
+      <div class="container">
+        <div class="card">
+          <img src="../../../assets/images/home/alojamiento-de-mascotas.png" alt="Alojamiento de mascotas">
+          Alojamiento de mascotas
+        </div>
+        <div class="card">
+          <img src="../../../assets/images/home/entrega-a-domicilio.png" alt="Cuidado a domicilio">
+          Cuidado a domicilio
+        </div>
+        <div class="card">
+          <img src="../../../assets/images/home/juguete-para-mascotas.png" alt="Visitas a domicilio">
+          Visitas a domicilio
+        </div>
+        <div class="card">
+          <img src="../../../assets/images/home/hogar.png" alt="Guarderia de día">
+          Guardería de día
+        </div>
+        <div class="card">
+          <img src="../../../assets/images/home/pasea-a-la-mascota.png" alt="Paseo de perros">
+          Paseo de perros
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>
 
 <!-- Aqui se llama el footer -->
 <app-footer></app-footer>

@@ -1,78 +1,102 @@
-<!-- services.component.html -->
-<body>
-    <header>
-      <h1>DogoFresh</h1>
-    </header>
-  
-    <p class="title">Encuentra al cuidador</p>
-  
-    <div class="form-section">
-      <label for="pet">Estoy buscando un servicio para mi:</label>
-      <select id="pet">
-        <option value="perro">Perro</option>
-        <option value="gato">Gato</option>
-        <option value="otro">Otro</option>
-      </select>
+<div class="container-fluid mt-5">
+  <div class="row">
+    <!-- En esta columna se llama al sidebar que esta en shared -->
+    <div class="col-md-2">
+      <app-sidebar></app-sidebar>
     </div>
-  
-    <section class="services">
-      <div class="container">
-        <div class="card">
-          <h5>Alojamiento de Mascotas</h5>
-          <img src="ruta/de/la/imagen1.jpg" alt="Alojamiento de Mascotas">
-          <button class="details-btn">Más Detalles</button>
+
+    <div class="col-md-10 main-content">
+      <h2 class="text-center">Listado de Registro de Mascotas</h2>
+<!-- 
+      <section class="services">
+        <div class="container dogs">
+          <div class="card">
+            <h5>Nombre del Perro 1</h5>
+            <img src="../../../assets/images/services/dog.jpg" alt="Dog 1">
+            <button class="details-btn">Más Detalles</button>
+          </div>
+
+          <div class="card">
+            <h5>Nombre del Perro 2</h5>
+            <img src="../../../assets/images/services/dog.jpg" alt="Dog 2">
+            <button class="details-btn">Más Detalles</button>
+          </div>
+
+          <div class="card">
+            <h5>Nombre del Perro 3</h5>
+            <img src="../../../assets/images/services/dog.jpg" alt="Dog 3">
+            <button class="details-btn">Más Detalles</button>
+          </div>
         </div>
-  
-        <div class="card">
-          <h5>Cuidado a Domicilio</h5>
-          <img src="ruta/de/la/imagen2.jpg" alt="Cuidado a Domicilio">
-          <button class="details-btn">Más Detalles</button>
+        <div class="container cats">
+          <div class="card">
+            <h5>Nombre del Gato 1</h5>
+            <img src="../../../assets/images/services/cat.png" alt="Cat 1">
+            <button class="details-btn">Más Detalles</button>
+          </div>
+
+          <div class="card">
+            <h5>Nombre del Gato 2</h5>
+            <img src="../../../assets/images/services/cat.png" alt="Cat 2">
+            <button class="details-btn">Más Detalles</button>
+          </div>
+
+          <div class="card">
+            <h5>Nombre del Gato 3</h5>
+            <img src="../../../assets/images/services/cat.png" alt="Cat 3">
+            <button class="details-btn">Más Detalles</button>
+          </div>
         </div>
-  
-        <div class="card">
-          <h5>Visitas a Domicilio</h5>
-          <img src="ruta/de/la/imagen3.jpg" alt="Visitas a Domicilio">
-          <button class="details-btn">Más Detalles</button>
+      </section> -->
+
+      <div class="row justify-content-center mt-3">
+        <div class="card me-4 p-3" style="width: 15rem;">
+          <div class="card-body d-flex flex-column justify-content-between">
+            <p class="text-center">Nombre mascota</p>
+            <button class="btn mt-auto">Detalles</button>
+          </div>
         </div>
-  
-        <div class="card">
-          <h5>Guardería de Día</h5>
-          <img src="ruta/de/la/imagen4.jpg" alt="Guardería de Día">
-          <button class="details-btn">Más Detalles</button>
+      
+        <div class="card me-4 p-3" style="width: 15rem;">
+          <div class="card-body d-flex flex-column justify-content-between">
+            <p class="text-center">Nombre mascota</p>
+            <button class="btn mt-auto">Detalles</button>
+          </div>
         </div>
-  
-        <div class="card">
-          <h5>Paseo de Perros</h5>
-          <img src="ruta/de/la/imagen5.jpg" alt="Paseo de Perros">
-          <button class="details-btn">Más Detalles</button>
+      
+        <div class="card me-4 p-3" style="width: 15rem;">
+          <div class="card-body d-flex flex-column justify-content-between">
+            <p class="text-center">Nombre mascota</p>
+            <button class="btn mt-auto">Detalles</button>
+          </div>
         </div>
       </div>
-    </section>
-  
-  
-    <div class="form-section centered">
-      <label for="address">¿Cuál es tu dirección?</label>
-      <input type="text" id="address" placeholder="Dirección">
+
+      <div class="row justify-content-center mt-5">
+        <div class="card me-4 p-3" style="width: 15rem;">
+          <div class="card-body d-flex flex-column justify-content-between">
+            <p class="text-center">Nombre mascota</p>
+            <button class="btn mt-auto">Detalles</button>
+          </div>
+        </div>
+      
+        <div class="card me-4 p-3" style="width: 15rem;">
+          <div class="card-body d-flex flex-column justify-content-between">
+            <p class="text-center">Nombre mascota</p>
+            <button class="btn mt-auto">Detalles</button>
+          </div>
+        </div>
+      
+        <div class="card me-4 p-3" style="width: 15rem;">
+          <div class="card-body d-flex flex-column justify-content-between">
+            <p class="text-center">Nombre mascota</p>
+            <button class="btn mt-auto">Detalles</button>
+          </div>
+        </div>
+      </div>
+
+      <button class="save-profile-btn">Guardar Perfil</button>
+
     </div>
-  
-    <div class="form-section centered">
-      <label for="start">¿Para qué fecha?</label>
-    </div>
-    
-    <div class="form-section date-form">
-      <label for="start">Entrada:</label>
-      <input type="date" id="start" name="trip-start" value="2024-06-01" min="2022-01-01" max="2025-12-31">
-    </div>
-  
-    <div class="form-section date-form">
-      <label for="end">Salida:</label>
-      <input type="date" id="end" name="trip-end" value="2024-06-07" min="2022-01-01" max="2025-12-31">
-    </div>
-  
-    <button class="next-btn">Siguiente</button>
-  
-  </body>
-  
-  
-  <!-- Aqui se llama el footer -->
-  <app-footer></app-footer>
+  </div>
+</div>

@@ -1,56 +1,3 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #ffffff; 
-}
-
-header {
-    text-align: center;
-    padding: 20px;
-    background-color: #F19A56;
-    margin-bottom: 20px;
-}
-
-.title {
-    text-align: center;
-    font-size: 30px;
-    margin-bottom: 20px;
-}
-
-.form-section {
-    margin-bottom: 20px;
-    text-align: center; 
-}
-
-.form-section label {
-    display: block;
-}
-
-.form-section select,
-.form-section input[type="text"] {
-    width: calc(50% - 10px);
-    margin-right: 10px;
-}
-
-.date-form {
-    display: flex;
-    justify-content: center; 
-    margin-bottom: 10px; 
-}
-
-.date-form label {
-    display: inline-block; 
-    text-align: center;
-    width: 30%; 
-    margin-right: 10px; 
-}
-
-.date-form input[type="date"] {
-    width: calc(30% - 10px); 
-    margin-right: 10px;
-}
-
 .services {
     display: flex;
     flex-direction: column;
@@ -66,37 +13,18 @@ header {
     gap: 20px;
 }
 
-.card {
+.card{
+    border: solid 1px #ec7519;
     border-radius: 20px;
-    background-color: #fff;
-    width: 200px;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.4);
 }
 
-.card img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
-.details-btn {
-    margin-top: 10px;
+.btn{
+    border-radius: 20px;
     background-color: #F19A56;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 10px;
-    cursor: pointer;
 }
 
-.details-btn:hover {
-    background-color: #E08948;
-}
-
-.next-btn {
+.save-profile-btn {
     position: fixed;
     bottom: 20px;
     right: 20px; 
@@ -106,9 +34,9 @@ header {
     padding: 15px 30px;
     border-radius: 10px;
     cursor: pointer;
-    z-index: 999; 
+    z-index: 999;
 }
 
-.next-btn:hover {
-    background-color: #E08948; 
+.save-profile-btn:hover {
+    background-color: #E08948;
 }

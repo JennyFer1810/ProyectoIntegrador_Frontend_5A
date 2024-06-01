@@ -1,85 +1,103 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #ffffff; 
+/* Estilos para el contenido principal */
+.main-content {
+    padding: 20px;
 }
 
-header {
+.form-label {
+    text-align: left;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+/* Estilos generales para la sección principal */
+.col-md-10.main-content {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Estilos para el título de la página de mascotas */
+.col-md-10.main-content h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
     text-align: center;
+}
+
+/* Estilos para la sección del perfil */
+.profile-section {
+    background-color: #ffffff;
     padding: 20px;
-    background-color: #F19A56;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para los grupos de formularios */
+.form-group {
     margin-bottom: 20px;
 }
 
-.title {
-    text-align: center;
-    font-size: 30px;
-    margin-bottom: 20px;
+/* Estilos para las etiquetas del formulario */
+.form-label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+    display: block;
 }
 
-.services {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    background-color: #F19A56;
-}
-
-.container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.card {
-    border-radius: 20px;
-    background-color: #fff;
-    width: 200px;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.card img {
+/* Estilos para los campos de entrada de texto y área de texto */
+.form-control {
     width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
-.details-btn {
-    margin-top: 10px;
-    background-color: #F19A56;
-    color: white;
-    border: none;
     padding: 10px;
-    border-radius: 10px;
-    cursor: pointer;
+    font-size: 14px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
-.details-btn:hover {
-    background-color: #E08948;
+/* Estilos para los checkboxes */
+.form-check-input {
+    margin-right: 10px;
 }
 
-.save-profile-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px; 
-    background-color: #F19A56;
-    color: white;
+.form-check-label {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Estilos para los botones */
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
     border: none;
-    padding: 15px 30px;
-    border-radius: 10px;
+    border-radius: 5px;
     cursor: pointer;
-    z-index: 999;
+    transition: background-color 0.3s ease;
 }
 
-.save-profile-btn:hover {
-    background-color: #E08948;
+.btn.btn-primary {
+    background-color: #007bff;
+    color: #fff;
 }
 
-.cats {
-    margin-top: 20px; 
+.btn.btn-primary:hover {
+    background-color: #0056b3;
 }
+
+.boton-agg {
+    margin-top: 20px;
+    display: block;
+    width: 100%;
+    max-width: 200px; /* ajustar según sea necesario */
+}
+
+.boton-ver-lista {
+    margin-top: 20px;
+    display: block;
+    width: 100%;
+    max-width: 200px; /* ajustar según sea necesario */
+}
+
