@@ -6,11 +6,10 @@ import { Page404Component } from './pages/page404/page404.component';
 import { ConfigRoutingModule } from './config/config-routing.module';
 
 const routes: Routes = [
-  {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full',
-  },
+  { 
+    path: '', 
+    redirectTo: '/home', 
+    pathMatch: 'full' },
   {
     path: 'config',
     redirectTo: 'config',

@@ -1,4 +1,4 @@
-<div class="container-fluid mt-5 p-5">
+<div class="container-fluid mt-4 p-5">
     <div class="row justify-content-center">
         <div class="col-12 col-md-5 col-lg-5">
             <div class="image p-5">
@@ -27,7 +27,10 @@
                         <button type="submit" class="btn px-5">Iniciar Sesión</button>
                     </div>
                     <div class="text-center mt-3">
-                        <a [routerLink]="'/auth/registerOwner'" class="link-primary text-black text-decoration-none">¿No tienes una cuenta? Regístrate aquí</a>
+                        <a [routerLink]="'/auth/registerOwner'" class="link-primary text-black text-decoration-none">Regístrate aquí como Propietario</a>
+                    </div>
+                    <div class="text-center mt-3">
+                        <a [routerLink]="'/auth/registerCarer'" class="link-primary text-black text-decoration-none">Regístrate aquí como Cuidador</a>
                     </div>
                 </form>
             </div>
