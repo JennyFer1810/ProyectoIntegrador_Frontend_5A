@@ -23,20 +23,3 @@
     border-radius: 20px;
     background-color: #F19A56;
 }
-
-.save-profile-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px; 
-    background-color: #F19A56;
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    border-radius: 10px;
-    cursor: pointer;
-    z-index: 999;
-}
-
-.save-profile-btn:hover {
-    background-color: #E08948;
-}
