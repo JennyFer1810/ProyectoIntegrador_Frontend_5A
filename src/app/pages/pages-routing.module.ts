@@ -14,11 +14,11 @@ import { RegisterPetsComponent } from '../config/register-pets/register-pets.com
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'home',
     component: PagesComponent,
     children: [
       {
-        path: 'home',
+        path: '',
         component: HomeComponent,
       },
       {
@@ -33,7 +33,6 @@ const routes: Routes = [
         path: 'login',
         component: LoginComponent,
       },
-
       ////////////////////////////////////////////
       {
         path: 'registerAddress',
@@ -58,7 +57,6 @@ const routes: Routes = [
     ],
   },
 ];
-
 
 @NgModule({
   declarations: [],

@@ -9,6 +9,7 @@ import { AuthRoutingModule } from '../auth/auth-routing.module';
 import { CarruselComponent } from './carrusel/carrusel.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { AppComponent } from '../app.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AppComponent } from '../app.component';
     CommonModule,
     RouterModule,
     SharedRoutingModule,
-    AuthRoutingModule
+    AuthRoutingModule,
+    FormsModule
   ],
   exports: [
     NavbarComponent,

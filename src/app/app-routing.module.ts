@@ -8,12 +8,17 @@ import { ConfigRoutingModule } from './config/config-routing.module';
 const routes: Routes = [
   { 
     path: '', 
-    redirectTo: '/home', 
+    redirectTo: 'home', 
     pathMatch: 'full' },
   {
     path: 'config',
     redirectTo: 'config',
     pathMatch: 'full',
+  },
+  {
+    path: 'auth',
+    redirectTo: 'auth',
+    pathMatch: 'full'
   },
   {
     path: '**', component: Page404Component
