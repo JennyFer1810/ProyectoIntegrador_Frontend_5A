@@ -5,7 +5,7 @@
       <app-sidebar></app-sidebar>
     </div>
 
-    <div class="col-md-10 main-content">
+    <div class="col-md-8 main-content">
       <h1>Tus Mascotas</h1>
       <div class="profile-section">
         <form>
@@ -13,63 +13,126 @@
             <div class="col-md-6">
               <div class="mb-3">
                 <label for="nombre" class="form-label"> Nombre:</label>
-                <input type="text" id="nombre" name="nombre" class="form-control">
+                <input
+                  type="text"
+                  id="nombre"
+                  name="nombre"
+                  [(ngModel)]="mascota.nombre"
+                  class="form-control"
+                />
               </div>
+            </div>
+            <div class="col-md-6">
               <div class="mb-3">
                 <label for="edad" class="form-label"> Edad:</label>
-                <input type="text" id="edad" name="edad" class="form-control">
+                <input
+                  type="number"
+                  id="edad"
+                  name="edad"
+                  [(ngModel)]="mascota.edad"
+                  class="form-control"
+                />
+                <div id="edad" class="form-text">
+                  Solo coloquen la edad en años, en caso de meses colocar con una coma: 0,6
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="tipoSangre" class="form-label">
+                  Tipo de Sangre:</label
+                >
+                <input
+                  type="text"
+                  id="tipoSangre"
+                  name="tipoSangre"
+                  [(ngModel)]="mascota.tipoSangre"
+                  class="form-control"
+                />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="tipoMascota" class="form-label">
+                  Tu mascota es:</label
+                >
+                <ng-select
+                  id="tipoMascota"
+                  name="tipoMascota"
+                  [compareWith]="compareWith"
+                  [items]="tipoMascotaList"
+                  bindLabel="valor"
+                  [(ngModel)]="mascota.tipoMascota"
+                >
+                </ng-select>
               </div>
             </div>
             <div class="col-md-6">
               <div class="mb-3">
                 <label for="alergias" class="form-label"> Alergias:</label>
-                <textarea id="alergias" name="alergias" class="form-control"></textarea>
-              </div>
-              <div class="mb-3">
-                <label for="discapacidades" class="form-label"> Discapacidades:</label>
-                <textarea id="discapacidades" name="discapacidades" class="form-control"></textarea>
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-6">
-              <div class="mb-3">
-                <label for="tipoSangre" class="form-label"> Tipo de Sangre:</label>
-                <input type="text" id="tipoSangre" name="tipoSangre" class="form-control">
+                <textarea
+                  id="alergias"
+                  name="alergias"
+                  [(ngModel)]="mascota.alergias"
+                  class="form-control"
+                ></textarea>
               </div>
             </div>
             <div class="col-md-6">
               <div class="mb-3">
-                <label for="descripcion" class="form-label"> Descripción:</label>
-                <textarea id="descripcion" name="descripcion" class="form-control"></textarea>
+                <label for="discapacidades" class="form-label">
+                  Discapacidades:</label
+                >
+                <textarea
+                  id="discapacidades"
+                  name="discapacidades"
+                  [(ngModel)]="mascota.discapacidades"
+                  class="form-control"
+                ></textarea>
               </div>
             </div>
-          </div>
-
-          <div class="row">
             <div class="col-md-6">
+              <div class="mb-3">
+                <label for="descripcion" class="form-label">
+                  Descripción:</label
+                >
+                <textarea
+                  id="descripcion"
+                  name="descripcion"
+                  [(ngModel)]="mascota.descripcion"
+                  class="form-control"
+                ></textarea>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-6">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="perro" id="perro">
-                <label class="form-check-label" for="perro"> Perro</label>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="gato" id="gato">
-                <label class="form-check-label" for="gato">Gato</label>
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="estado"
+                  name="estado"
+                  [(ngModel)]="mascota.estado"
+                />
+                <label class="form-check-label" for="estado"> Estado </label>
               </div>
             </div>
           </div>
-
           <div class="row">
             <div class="col-md-6">
-              <button type="button" class="btn btn-primary boton-agg" data-toggle="modal" data-target="#exampleModal">
+              <button
+                type="button"
+                class="btn btn-primary boton-agg"
+                (click)="saveMascota(mascota)"
+              >
                 Agregar mascota
               </button>
             </div>
             <div class="col-md-6">
-              <button type="button" class="btn btn-primary boton-ver-lista" [routerLink]="['/config', 'listPets']">
+              <button
+                type="button"
+                class="btn btn-primary boton-ver-lista"
+                [routerLink]="['/config', 'listPets']"
+              >
                 Ver lista de mascotas
               </button>
             </div>

@@ -11,7 +11,7 @@ export class NavbarComponent implements OnInit {
   isLogged = false;
   isAdmin = false;
   correo_usuario: string = '';
- 
+
   constructor(private tokenService: TokenService, private router: Router) {}
 
   ngOnInit(): void {
@@ -24,6 +24,6 @@ export class NavbarComponent implements OnInit {
 
   logOut() {
     this.tokenService.logOut();
-    this.router.navigate(['/'])
+    window.location.reload();
   }
 }

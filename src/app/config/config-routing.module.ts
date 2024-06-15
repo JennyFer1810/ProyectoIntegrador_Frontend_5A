@@ -11,10 +11,17 @@ import { PanelComponent } from './panel/panel.component';
 import { RegisterCareRequestComponent } from './register-care-request/register-care-request.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { ListPetsComponent } from './list-pets/list-pets.component';
+import { CategoriesAdminComponent } from './categories-admin/categories-admin.component';
+import { MyCareRequestsComponent } from './my-care-requests/my-care-requests.component';
+import { CareRequestFormComponent } from './care-request-form/care-request-form.component';
+import { MyCareRequestsFormComponent } from './my-care-requests-form/my-care-requests-form.component';
+import { ValidacionGuard } from '../guards/validacion.guard';
 
 const routes: Routes = [
   {
-    path: 'config', component: ConfigComponent,
+    path: 'config',
+    component: ConfigComponent,
+    canActivate: [ValidacionGuard],
     children: [
       {
         path: 'panel',
@@ -33,24 +40,40 @@ const routes: Routes = [
         component: ProfileComponent,
       },
       {
+        path: 'myCareList',
+        component: MyCareRequestsComponent,
+      },
+      {
+        path: 'myCareForm',
+        component: MyCareRequestsFormComponent,
+      },
+      {
         path: 'careList',
         component: CareRequestListComponent,
       },
       {
+        path: 'careForm',
+        component: CareRequestFormComponent,
+      },
+      {
         path: 'registerRequest',
-        component: RegisterCareRequestComponent
+        component: RegisterCareRequestComponent,
       },
       {
         path: 'registerPets',
-        component: RegisterPetsComponent
+        component: RegisterPetsComponent,
       },
       {
         path: 'editProfile',
-        component: EditProfileComponent
+        component: EditProfileComponent,
       },
       {
         path: 'listPets',
-        component: ListPetsComponent
+        component: ListPetsComponent,
+      },
+      {
+        path: 'categories',
+        component: CategoriesAdminComponent,
       },
     ],
   },
@@ -58,9 +81,7 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule, RouterModule.forChild(routes),
-  ],
+  imports: [CommonModule, RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class ConfigRoutingModule { }
+export class ConfigRoutingModule {}

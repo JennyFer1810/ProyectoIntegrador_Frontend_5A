@@ -13,9 +13,9 @@ import { UsuarioService } from 'src/app/service/usuario.service';
 export class RegisterAddressComponent implements OnInit {
   direccionesList: DireccionModel[] = [];
   direccion: DireccionModel = new DireccionModel();
-  auxDireccion: DireccionModel = new DireccionModel();
   usuario: UsuarioModel = new UsuarioModel();
   isEditing: boolean = false;
+  index: number = 0;
 
   constructor(
     private tokenService: TokenService,
@@ -28,20 +28,18 @@ export class RegisterAddressComponent implements OnInit {
 
   private listadoDirecciones() {
     const correo = this.tokenService.getInfoUser();
-    console.log(this.tokenService.getToken());
-
     this.usuarioService.findByCorreo(correo).subscribe({
       next: (data: UsuarioModel) => {
         this.usuario = data;
         this.direccionesList = data.direcciones;
-        console.log(this.usuario);
       },
     });
   }
 
-  selectDireccion(direccion: DireccionModel) {
+  selectDireccion(index: number, direccion: DireccionModel) {
     this.direccion = direccion;
-    this.isEditing = !this.isEditing;
+    this.index = index;
+    this.isEditing = true;
   }
 
   deleteDireccion() {
@@ -56,6 +54,34 @@ export class RegisterAddressComponent implements OnInit {
         console.log(data);
       },
       error: (err: any) => {
+        console.error(err);
+      },
+    });
+  }
+
+  updateDirecciones() {
+    this.direccionesList[this.index] = this.direccion;
+    this.usuario.direcciones = this.direccionesList;
+    this.usuarioService.update(this.usuario.id, this.usuario).subscribe({
+      next: (data: any) => {
+        console.log(data);
+      },
+      error: (err: Error) => {
+        console.error(err);
+      },
+    });
+    this.isEditing = false;
+    this.direccion = new DireccionModel();
+  }
+
+  deleteDireccionUsuario(index: number) {
+    this.direccionesList.splice(index, 1);
+    this.usuario.direcciones = this.direccionesList;
+    this.usuarioService.update(this.usuario.id, this.usuario).subscribe({
+      next: (data: any) => {
+        console.log(data);
+      },
+      error: (err: Error) => {
         console.error(err);
       },
     });

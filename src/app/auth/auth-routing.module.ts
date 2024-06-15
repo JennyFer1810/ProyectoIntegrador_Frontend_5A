@@ -4,10 +4,12 @@ import { LoginComponent } from './login/login.component';
 import { RouterModule, Routes } from '@angular/router';
 import { RegisterOwnerComponent } from './register-owner/register-owner.component';
 import { RegisterCarerComponent } from './register-carer/register-carer.component';
+import { LoginGuard } from '../guards/login.guard';
 
 const routes: Routes = [
   {
     path: 'auth',
+    canActivate: [LoginGuard],
     children: [
       {
         path: 'login',
@@ -30,4 +32,4 @@ const routes: Routes = [
   imports: [CommonModule, RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class AuthRoutingModule { }
+export class AuthRoutingModule {}

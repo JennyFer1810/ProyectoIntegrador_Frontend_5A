@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { UsuarioModel } from '../models/usuario.model';
+import { UpdateUsuarioModel, UsuarioModel } from '../models/usuario.model';
 import { Observable } from 'rxjs';
 import {
   RegistroCuidador,
@@ -40,7 +40,7 @@ export class UsuarioService {
     return this.httpClient.post<any>(`${this.usuarioUrl}/save`, usuario);
   }
 
-  public update(id: number, usuario: UsuarioModel): Observable<any> {
+  public update(id: number, usuario: UpdateUsuarioModel): Observable<any> {
     console.log(id, usuario);
     console.log(`${this.usuarioUrl}/update/${id}`);
     return this.httpClient.put<any>(`${this.usuarioUrl}/update/${id}`, usuario);

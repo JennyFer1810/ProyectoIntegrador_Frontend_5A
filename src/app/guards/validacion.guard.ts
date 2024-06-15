@@ -15,8 +15,6 @@ export class ValidacionGuard {
 
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     if (this.tokenService.isLogged()) {
-      console.log(next, state);
-
       return true;
     }
     return false;

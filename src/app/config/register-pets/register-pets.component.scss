@@ -1,103 +1,12 @@
 /* Estilos para el contenido principal */
 .main-content {
-    padding: 20px;
-}
-
-.form-label {
-    text-align: left;
-    color: rgb(0, 0, 0);
-    font-weight: bold;
-}
-
-/* Estilos generales para la sección principal */
-.col-md-10.main-content {
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 10px;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-/* Estilos para el título de la página de mascotas */
-.col-md-10.main-content h1 {
-    font-size: 28px;
-    font-weight: 700;
-    color: #333;
-    margin-bottom: 20px;
-    text-align: center;
+  padding: 20px;
 }
 
 /* Estilos para la sección del perfil */
 .profile-section {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
-/* Estilos para los grupos de formularios */
-.form-group {
-    margin-bottom: 20px;
-}
-
-/* Estilos para las etiquetas del formulario */
-.form-label {
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 5px;
-    display: block;
-}
-
-/* Estilos para los campos de entrada de texto y área de texto */
-.form-control {
-    width: 100%;
-    padding: 10px;
-    font-size: 14px;
-    border: 1px solid #cccccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-/* Estilos para los checkboxes */
-.form-check-input {
-    margin-right: 10px;
-}
-
-.form-check-label {
-    font-size: 14px;
-    color: #555;
-}
-
-/* Estilos para los botones */
-.btn {
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.btn.btn-primary {
-    background-color: #007bff;
-    color: #fff;
-}
-
-.btn.btn-primary:hover {
-    background-color: #0056b3;
-}
-
-.boton-agg {
-    margin-top: 20px;
-    display: block;
-    width: 100%;
-    max-width: 200px; /* ajustar según sea necesario */
-}
-
-.boton-ver-lista {
-    margin-top: 20px;
-    display: block;
-    width: 100%;
-    max-width: 200px; /* ajustar según sea necesario */
-}
-
