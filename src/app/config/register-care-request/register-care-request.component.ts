@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { CatalogoModel } from 'src/app/models/catalogo.model';
 import { DireccionModel } from 'src/app/models/direccion.model';
 import { MascotaModel } from 'src/app/models/mascota.model';
@@ -37,6 +38,7 @@ export class RegisterCareRequestComponent implements OnInit {
     private router: Router,
     private solicitudService: SolicitudService,
     private tokenService: TokenService,
+    private toastrService: ToastrService,
     private usuarioService: UsuarioService
   ) {}
 
@@ -138,11 +140,17 @@ export class RegisterCareRequestComponent implements OnInit {
 
     this.solicitudService.save(this.solicitud).subscribe({
       next: (data: any) => {
-        console.log(data);
+        this.toastrService.success('Solicitud guardada exitoso'), 
+        {
+          timeOut: 4000,
+        };
         this.router.navigate(['/config/panel']);
       },
-      error: (err: Error) => {
-        console.error(err);
+      error: (err: any) => {
+        this.toastrService.error(err),
+        {
+          timeOut: 2000,
+        };
       },
     });
   }

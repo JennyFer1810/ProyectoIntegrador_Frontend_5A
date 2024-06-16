@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { CatalogoModel } from 'src/app/models/catalogo.model';
 import { MascotaModel } from 'src/app/models/mascota.model';
 import { PropietarioModel } from 'src/app/models/propietario.model';
@@ -23,6 +24,7 @@ export class RegisterPetsComponent implements OnInit {
     private catalogoService: CatalogoService,
     private usuarioService: UsuarioService,
     private propietarioService: PropietarioService,
+    private toastrService: ToastrService,
     private tokenService: TokenService
   ) {}
 
@@ -58,13 +60,19 @@ export class RegisterPetsComponent implements OnInit {
             this.propietario = data;
             console.log(this.propietario);
           },
-          error: (err: Error) => {
-            console.error(err);
+          error: (err: any) => {
+            this.toastrService.error(err),
+            {
+              timeOut: 1000,
+            };
           },
         });
       },
-      error: (err: Error) => {
-        console.error(err);
+      error: (err: any) => {
+        this.toastrService.error(err),
+        {
+          timeOut: 1000,
+        };
       },
     });
   }
@@ -78,12 +86,17 @@ export class RegisterPetsComponent implements OnInit {
         .update(this.propietario.id, this.propietario)
         .subscribe({
           next: (data: any) => {
-            console.log(data);
+            this.toastrService.success('Mascota guardada exitosamente'), 
+            {
+              timeOut: 1500,
+            };
           },
-          error: (err: Error) => {
-            console.error(err);
+          error: (err: any) => {
+            this.toastrService.error(err),
+            {
+              timeOut: 1000,
+            };
           },
         });
-    console.log(this.propietario);
   }
 }

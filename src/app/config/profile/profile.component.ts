@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { UpdateUsuarioModel, UsuarioModel } from 'src/app/models/usuario.model';
 import { TokenService } from 'src/app/service/token.service';
 import { UsuarioService } from 'src/app/service/usuario.service';
@@ -15,6 +16,7 @@ export class ProfileComponent implements OnInit {
 
   constructor(
     private tokenService: TokenService,
+    private toastrService: ToastrService,
     private usuarioService: UsuarioService
   ) {}
 
@@ -37,10 +39,16 @@ export class ProfileComponent implements OnInit {
     this.auxUsuario = this.usuario;
     this.usuarioService.update(this.auxUsuario.id, this.auxUsuario).subscribe({
       next: (data: any) => {
-        console.log(data);
+        this.toastrService.success('Actualización exitosa'), 
+        {
+          timeOut: 4000,
+        };
       },
       error: (err: any) => {
-        console.error(err);
+        this.toastrService.error(err),
+        {
+          timeOut: 2000,
+        };
       },
     });
   }

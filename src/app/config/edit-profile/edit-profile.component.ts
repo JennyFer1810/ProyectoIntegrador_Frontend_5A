@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { UpdateUsuarioModel, UsuarioModel } from 'src/app/models/usuario.model';
 import { TokenService } from 'src/app/service/token.service';
 import { UsuarioService } from 'src/app/service/usuario.service';
@@ -16,6 +17,7 @@ export class EditProfileComponent implements OnInit {
   constructor(
     private tokenService: TokenService,
     private usuarioService: UsuarioService,
+    private toastrService: ToastrService,
     private router: Router
   ) {}
 
@@ -38,11 +40,17 @@ export class EditProfileComponent implements OnInit {
     this.auxUsuario = this.usuario;
     this.usuarioService.update(this.auxUsuario.id, this.auxUsuario).subscribe({
       next: (data: any) => {
-        console.log(data);
+        this.toastrService.success('Actualización exitosa'), 
+        {
+          timeOut: 1500,
+        };
         this.router.navigate(['/config/profile'])
       },
-      error: (err: Error) => {
-        console.error(err);
+      error: (err: any) => {
+        this.toastrService.error(err),
+        {
+          timeOut: 1000,
+        };
       },
     });
   }

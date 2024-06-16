@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RegistroCuidador } from 'src/app/models/registro.model';
 import { UsuarioService } from 'src/app/service/usuario.service';
+import { TokenService } from 'src/app/service/token.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-register-carer',
@@ -11,7 +13,10 @@ import { UsuarioService } from 'src/app/service/usuario.service';
 export class RegisterCarerComponent implements OnInit {
   registroCuidador: RegistroCuidador = new RegistroCuidador();
 
-  constructor(private usuarioService: UsuarioService, private router: Router) {}
+  constructor(
+    private usuarioService: UsuarioService, 
+    private toastrService: ToastrService,
+    private router: Router) {}
 
   ngOnInit(): void {
     this.initializeRegister();
@@ -23,15 +28,23 @@ export class RegisterCarerComponent implements OnInit {
 
   registrarCuidador() {
     if (this.registroCuidador == null) {
-      console.log('llena datos');
+      this.toastrService.error("Llenar los datos"), {
+        timeOut: 2000,
+      };
     } else {
       this.usuarioService.saveCuidador(this.registroCuidador).subscribe({
         next: (data: any) => {
-          console.log(data);
+          this.toastrService.success(data), 
+          {
+            timeOut: 1500,
+          };
           this.router.navigate(['/home']);
         },
         error: (err: Error) => {
-          console.error(err);
+          this.toastrService.error("Registro no completado"),
+          {
+            timeOut: 1000,
+          };
         },
       });
     }

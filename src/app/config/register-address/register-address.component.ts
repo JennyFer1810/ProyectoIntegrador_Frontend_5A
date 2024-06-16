@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { DireccionModel } from 'src/app/models/direccion.model';
 import { UsuarioModel } from 'src/app/models/usuario.model';
 import { DireccionService } from 'src/app/service/direccion.service';
@@ -19,6 +20,7 @@ export class RegisterAddressComponent implements OnInit {
 
   constructor(
     private tokenService: TokenService,
+    private toastrService: ToastrService,
     private usuarioService: UsuarioService
   ) {}
 
@@ -51,10 +53,16 @@ export class RegisterAddressComponent implements OnInit {
     this.usuario.direcciones.push(this.direccion);
     this.usuarioService.update(this.usuario.id, this.usuario).subscribe({
       next: (data: any) => {
-        console.log(data);
+        this.toastrService.success('Registro exitoso'), 
+        {
+          timeOut: 4000,
+        };
       },
       error: (err: any) => {
-        console.error(err);
+        this.toastrService.error(err),
+        {
+          timeOut: 2000,
+        };
       },
     });
   }
@@ -64,10 +72,16 @@ export class RegisterAddressComponent implements OnInit {
     this.usuario.direcciones = this.direccionesList;
     this.usuarioService.update(this.usuario.id, this.usuario).subscribe({
       next: (data: any) => {
-        console.log(data);
+        this.toastrService.success('Actualización exitosa'), 
+        {
+          timeOut: 4000,
+        };
       },
-      error: (err: Error) => {
-        console.error(err);
+      error: (err: any) => {
+        this.toastrService.error(err),
+        {
+          timeOut: 2000,
+        };
       },
     });
     this.isEditing = false;
@@ -79,10 +93,16 @@ export class RegisterAddressComponent implements OnInit {
     this.usuario.direcciones = this.direccionesList;
     this.usuarioService.update(this.usuario.id, this.usuario).subscribe({
       next: (data: any) => {
-        console.log(data);
+        this.toastrService.success('Borrado exitoso'), 
+        {
+          timeOut: 4000,
+        };
       },
-      error: (err: Error) => {
-        console.error(err);
+      error: (err: any) => {
+        this.toastrService.error(err),
+        {
+          timeOut: 1000,
+        };
       },
     });
   }

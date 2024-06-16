@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { CuidadorModel } from 'src/app/models/cuidador.model';
 import { MascotaModel } from 'src/app/models/mascota.model';
 import { SolicitudModel } from 'src/app/models/solicitud.model';
@@ -19,13 +20,13 @@ export class CareRequestFormComponent implements OnInit {
   nombreUsuario: string = '';
   private isEditing: boolean = false;
   solicitud: SolicitudModel = new SolicitudModel();
-  private usuario: UsuarioModel = new UsuarioModel();
   private cuidador: CuidadorModel = new CuidadorModel();
 
   constructor(
     private cuidadorService: CuidadorService,
     private solicitudService: SolicitudService,
     private tokenService: TokenService,
+    private toastrService: ToastrService,
     private usuarioService: UsuarioService
   ) {}
 
@@ -52,13 +53,12 @@ export class CareRequestFormComponent implements OnInit {
   private getUser() {
     const correo = this.tokenService.getInfoUser();
     this.usuarioService.findByCorreo(correo).subscribe({
-      next: (data: UsuarioModel) => {
-        this.usuario = data;
-      },
-    });
-    this.cuidadorService.getByUsuarioId(this.usuario.id).subscribe({
-      next: (data: CuidadorModel) => {
-        this.cuidador = data;
+      next: (usuario: UsuarioModel) => {
+        this.cuidadorService.getByUsuarioId(usuario.id).subscribe({
+          next: (data: CuidadorModel) => {
+            this.cuidador = data;
+          },
+        });
       },
     });
   }
@@ -67,10 +67,16 @@ export class CareRequestFormComponent implements OnInit {
     this.solicitud.cuidador = this.cuidador;
     this.solicitudService.update(this.solicitud.id, this.solicitud).subscribe({
       next: (data: any) => {
-        console.log(data);
+        this.toastrService.success('Registro exitoso'), 
+        {
+          timeOut: 1500,
+        };
       },
-      error: (err: Error) => {
-        console.error(err);
+      error: (err: any) => {
+        this.toastrService.error(err),
+          {
+            timeOut: 1000,
+          };
       },
     });
   }

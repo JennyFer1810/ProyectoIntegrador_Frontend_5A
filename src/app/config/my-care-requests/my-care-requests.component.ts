@@ -36,12 +36,6 @@ export class MyCareRequestsComponent implements OnInit {
       },
     });
 
-    // await this.propietarioService.getByUsuarioId(this.usuario.id).subscribe({
-    //   next: (data: PropietarioModel) => {
-    //     this.propietario = data;
-    //   },
-    // });
-
     await this.solicitudService.getList().subscribe({
       next: (data: SolicitudModel[]) => {
         this.solicitudesList = data.filter((solicitud) => {

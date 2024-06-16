@@ -30,8 +30,7 @@
         </thead>
         <tbody>
           <tr *ngFor="let mascota of mascotasList; let i = index">
-
-            <td>{{ mascota.id + " " + mascota.nombre }}</td>
+            <td>{{ mascota.nombre }}</td>
             <td>{{ mascota.edad + " años" }}</td>
             <td>{{ mascota.tipoMascota.valor }}</td>
             <td>{{ mascota.alergias }}</td>

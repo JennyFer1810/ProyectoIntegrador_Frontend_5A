@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { CatalogoModel } from 'src/app/models/catalogo.model';
 import { CatalogoService } from 'src/app/service/catalogo.service';
 
@@ -13,7 +14,10 @@ export class CategoriesAdminComponent implements OnInit {
   isEditing: boolean = false;
   index: number = 0;
 
-  constructor(private catalogoService: CatalogoService) {}
+  constructor(
+    private catalogoService: CatalogoService,
+    private toastrService: ToastrService,
+  ) {}
 
   ngOnInit(): void {
     this.listadoCategorias();
@@ -23,10 +27,12 @@ export class CategoriesAdminComponent implements OnInit {
     this.catalogoService.getList().subscribe({
       next: (data: CatalogoModel[]) => {
         this.catalogoList = data;
-        console.log(data)
       },
       error: (err: Error) => {
-        console.error(err);
+        this.toastrService.error("Error listado categoría"),
+        {
+          timeOut: 1000,
+        };
       },
     });
   }
@@ -40,10 +46,16 @@ export class CategoriesAdminComponent implements OnInit {
   updateCatalogo() {
     this.catalogoService.update(this.catalogo.id, this.catalogo).subscribe({
       next: (data: any) => {
-        console.log(data);
+        this.toastrService.success('Actualización completada'), 
+        {
+          timeOut: 1500,
+        };
       },
       error: (err: Error) => {
-        console.error(err);
+        this.toastrService.error("Algo salió mal"),
+        {
+          timeOut: 1000,
+        };
       },
     });
   }
@@ -51,10 +63,16 @@ export class CategoriesAdminComponent implements OnInit {
   saveCatalogo() {
     this.catalogoService.save(this.catalogo).subscribe({
       next: (data: any) => {
-        console.log(data);
+        this.toastrService.success('Guardado con éxito'), 
+        {
+          timeOut: 1500,
+        };
       },
       error: (err: Error) => {
-        console.error(err);
+        this.toastrService.error("Algo salió mal"),
+        {
+          timeOut: 1000,
+        };
       },
     });
   }
@@ -67,10 +85,15 @@ export class CategoriesAdminComponent implements OnInit {
   deleteCatalogoFromList(id: number) {
     this.catalogoService.delete(id).subscribe({
       next: (data: any) => {
-        console.log(data);
+        this.toastrService.error("Eliminación exitosa"), {
+          timeOut: 1000,
+        };
       },
       error: (err: Error) => {
-        console.error(err);
+        this.toastrService.error("Algo salió mal"),
+        {
+          timeOut: 1000,
+        };
       },
     });
   }

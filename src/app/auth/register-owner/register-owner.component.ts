@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { RegistroPropietario } from 'src/app/models/registro.model';
 import { UsuarioService } from 'src/app/service/usuario.service';
 
@@ -11,7 +12,10 @@ import { UsuarioService } from 'src/app/service/usuario.service';
 export class RegisterOwnerComponent implements OnInit {
   registroPropietario: RegistroPropietario = new RegistroPropietario();
 
-  constructor(private usuarioService: UsuarioService, private router: Router) {}
+  constructor(
+    private usuarioService: UsuarioService, 
+    private toastrService: ToastrService,
+    private router: Router) {}
 
   ngOnInit(): void {
     this.initializeRegister();
@@ -23,15 +27,23 @@ export class RegisterOwnerComponent implements OnInit {
 
   registrarPropietario() {
     if (this.registroPropietario == null) {
-      console.log('llena datos');
+      this.toastrService.error("Ingrese datos"), {
+        timeOut: 1500,
+      };
     } else {
       this.usuarioService.savePropietario(this.registroPropietario).subscribe({
         next: (data: any) => {
-          console.log(data);
+          this.toastrService.success(data), 
+          {
+            timeOut: 1500,
+          };
           this.router.navigate(['/home']);
         },
         error: (err: Error) => {
-          console.error(err);
+          this.toastrService.error("Registro no completado"),
+          {
+            timeOut: 1000,
+          };
         },
       });
     }

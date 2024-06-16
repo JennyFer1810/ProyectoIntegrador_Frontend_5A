@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { CuidadorModel } from 'src/app/models/cuidador.model';
 import { MascotaModel } from 'src/app/models/mascota.model';
 import { SolicitudModel } from 'src/app/models/solicitud.model';
@@ -24,7 +25,8 @@ export class MyCareRequestsFormComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private solicitudService: SolicitudService
+    private solicitudService: SolicitudService,
+    private toastrService: ToastrService,
   ) {}
 
   ngOnInit(): void {
@@ -50,11 +52,13 @@ export class MyCareRequestsFormComponent implements OnInit {
     this.solicitud.estado = false;
     this.solicitudService.update(this.solicitud.id, this.solicitud).subscribe({
       next: (data: any) => {
-        console.log(data);
         this.router.navigate(["/config/myCareList"]);
       },
       error: (err: Error) => {
-        console.error(err);
+        this.toastrService.error("Algo salió mal"),
+        {
+          timeOut: 2000,
+        };
       },
     });
   }

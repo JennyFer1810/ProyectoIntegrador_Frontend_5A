@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { MascotaModel } from 'src/app/models/mascota.model';
 import { PropietarioModel } from 'src/app/models/propietario.model';
 import { UsuarioModel } from 'src/app/models/usuario.model';
@@ -21,6 +22,7 @@ export class ListPetsComponent implements OnInit {
     private mascotaService: MascotaService,
     private propietarioService: PropietarioService,
     private tokenService: TokenService,
+    private toastrService: ToastrService,
     private usuarioService: UsuarioService
   ) {}
 
@@ -37,15 +39,17 @@ export class ListPetsComponent implements OnInit {
           next: (data: PropietarioModel) => {
             this.propietario = data;
             this.mascotasList = this.propietario.mascotas;
-            console.log(this.propietario);
           },
-          error: (err: Error) => {
-            console.error(err);
+          error: (err: any) => {
+            this.toastrService.error("Hubo un error con tus mascotas"),
+            {
+              timeOut: 1000,
+            };
           },
         });
       },
       error: (err: Error) => {
-        console.error(err);
+        console.error("Hubo error con tu usuario");
       },
     });
   }
@@ -57,19 +61,28 @@ export class ListPetsComponent implements OnInit {
       .update(this.propietario.id, this.propietario)
       .subscribe({
         next: (data: any) => {
-          console.log('Propietario actualizado:', data);
+          this.toastrService.success('Eliminado con éxito'), 
+          {
+            timeOut: 1500,
+          };
         },
         error: (err: any) => {
-          console.error('Error al actualizar propietario:', err);
+          this.toastrService.error(err),
+          {
+            timeOut: 1000,
+          };
         },
       });
 
     this.mascotaService.delete(mascota.id).subscribe({
       next: (data: any) => {
-        console.log('Mascota eliminada:', data);
       },
       error: (err: any) => {
-        console.error('Error al eliminar mascota:', err);
+        this.toastrService.error("Algo salió mal"),
+        {
+          timeOut: 1000,
+        };
+
       },
     });
   }
