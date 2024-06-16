@@ -13,6 +13,8 @@ import { ConfigModule } from './config/config.module';
 import { FormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtInterceptor } from './interceptors/jwt.interceptor';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,7 @@ import { JwtInterceptor } from './interceptors/jwt.interceptor';
   imports: [
     CommonModule,
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     SharedModule,
     PagesRoutingModule,
@@ -30,7 +33,7 @@ import { JwtInterceptor } from './interceptors/jwt.interceptor';
     AuthModule,
     ConfigModule,
     FormsModule,
-
+    ToastrModule.forRoot()
   ],
   providers: [ { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }],
   bootstrap: [AppComponent]

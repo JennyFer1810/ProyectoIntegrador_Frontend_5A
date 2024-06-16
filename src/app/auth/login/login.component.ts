@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { timeout } from 'rxjs';
 import { LoginModel } from 'src/app/models/login.model';
 import { AuthService } from 'src/app/service/auth.service';
 import { TokenService } from 'src/app/service/token.service';
@@ -15,6 +17,7 @@ export class LoginComponent {
   constructor(
     private authService: AuthService,
     private tokenService: TokenService,
+    private toastrService: ToastrService,
     private router: Router
   ) {}
 
@@ -23,16 +26,23 @@ export class LoginComponent {
     this.authService.login(usuario).subscribe({
       next: (data: any) => {
         if (!data.jwt) {
-          console.log('Aqui no hay login');
-          console.log(data); 
+          this.toastrService.error(data),
+            {
+              timeOut: 2000,
+            };
         } else if (data.jwt) {
-          console.log(data);
+          this.toastrService.success("Bienvenid@"),{
+            timeout: 4000
+          }
           this.tokenService.setToken(data.jwt);
-          this.router.navigate(["/home"])
+          this.router.navigate(['/home']);
         }
       },
       error: (err: any) => {
-        console.error(err);
+        this.toastrService.error(err),
+        {
+          timeOut: 1000,
+        };
       },
     });
   }
